@@ -1,0 +1,26 @@
+<article class="cocktail-detail">
+  <i class="fa-solid fa-arrow-left-long cocktail-detail__back" (click)="backToList()"></i>
+  <ng-container *ngIf="source; else loading">
+    <h1 class="cocktail-detail__title">{{ source.strDrink }}</h1>
+    <section class="cocktail-detail__main">
+      <img [src]="source.strDrinkThumb" alt="" class="cocktail-detail__thumb">
+      <ul class="cocktail-detail__ingredients">
+        <li *ngFor="let ingredient of source.strIngredients">
+          {{ ingredient.quantity }} - {{ ingredient.description }}
+        </li>
+      </ul>
+      &bull; How to prepare
+      <p>
+        {{ source.strInstructions }}
+      </p>
+    </section>
+  </ng-container>
+</article>
+<ng-template #loading>
+  <section class="cocktail-detail__main--loading">
+    <i class="fa-duotone fa-spinner-third"></i>
+    <p>
+      Loading details...
+    </p>
+  </section>
+</ng-template>

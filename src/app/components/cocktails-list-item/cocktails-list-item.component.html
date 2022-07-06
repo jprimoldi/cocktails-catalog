@@ -1,0 +1,21 @@
+<article class="cocktails-list-item" (click)="handleClicked()">
+  <section class="cocktails-list-item__main">
+    <h2 class="cocktails-list-item__title">{{ source.strDrink }}</h2>
+    <ng-container *ngIf="source.strIngredients?.length">
+      <ul class="cocktails-list-item__ingredients">
+        <ng-container *ngFor="let ingredient of source.strIngredients; let index = index">
+          <li *ngIf="index < MAX_ITEMS">
+            {{ ingredient.description }}
+          </li>
+        </ng-container>
+      </ul>
+      <p *ngIf="source.strIngredients && source.strIngredients.length > MAX_ITEMS" class="cocktails-list-item__more">
+        and {{ source.strIngredients.length - MAX_ITEMS }} more ingredients
+      </p>
+    </ng-container>
+    <p *ngIf="!source.strInstructions">
+      Loading ingredients...
+    </p>
+  </section>
+  <div style="background-image: url({{source.strDrinkThumb}})" class="cocktails-list-item__thumb"></div>
+</article>

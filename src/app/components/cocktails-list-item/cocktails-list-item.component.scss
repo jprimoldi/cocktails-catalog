@@ -1,0 +1,40 @@
+:host {
+  display: block;
+  padding: .5rem;
+}
+
+.cocktails-list-item {
+  display: flex;
+  padding: 1rem;
+  border-radius: 4px;
+  justify-content: space-between;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, .2);
+  background-color: white;
+  cursor: pointer;
+
+  &__title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0 .5rem;
+  }
+
+  &__thumb {
+    width: 140px;
+    height: 165px;
+    border-radius: 3px;
+    background-position: center;
+    background-size: cover;
+  }
+
+  &__ingredients {
+    padding-inline-start: 1.5rem;
+    font-size: 14px;
+    margin-bottom: 0;
+  }
+
+  &__more {
+    font-size: 12px;
+    padding-left: .5rem;
+    margin-top: .25rem;
+  }
+}

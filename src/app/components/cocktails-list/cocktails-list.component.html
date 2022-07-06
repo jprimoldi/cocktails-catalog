@@ -1,0 +1,13 @@
+<ng-container *ngIf="items?.length; else loading">
+  <app-cocktails-list-item
+    *ngFor="let item of items"
+    [source]="item"
+    [id]="item.idDrink"
+    (clicked)="handleClicked($event)"
+  ></app-cocktails-list-item>    
+</ng-container>
+<ng-template #loading>
+  <p class="cocktails-list__loading">
+    Aguarde un instante...
+  </p>
+</ng-template>
